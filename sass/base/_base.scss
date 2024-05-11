@@ -1,0 +1,48 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    /*for root font size*/
+    font-size: 62.5%;
+    //this define what 1 rem is  = 10px  10px/16px = 62.5%
+
+    // @include respond-phone {  //for adding media query using sass
+    //     font-size: 50%;
+    // }
+
+    // @include respond(phone) {
+    //     font-size: 50%;                  
+    // }
+    
+    @include respond(tab-land) {
+        font-size: 56.25%;           //1200 
+    }
+
+    @include respond(tab-port) {
+        font-size:  50%;        //900
+    }
+
+    @include respond(big-desktop) {
+        font-size: 75%;                    
+    }
+}
+
+body {
+    box-sizing: border-box;
+    padding: 3rem;
+
+    @include respond(tab-port) {
+    padding: 0;
+    }
+
+}
+
+::selection {
+    background-color: $color-primary;
+    color: $color-white;
+}
